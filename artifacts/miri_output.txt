@@ -1,0 +1,98 @@
+I will run `"rustup" "component" "add" "rust-src"` to install the `rust-src` component for the selected toolchain. Proceed? [Y/n] info: downloading component 'rust-src'
+info: installing component 'rust-src'
+Preparing a sysroot for Miri (target: aarch64-apple-darwin)... done
+   Compiling proc-macro2 v1.0.103
+   Compiling quote v1.0.42
+   Compiling unicode-ident v1.0.22
+   Compiling crossbeam-utils v0.8.21
+   Compiling serde_core v1.0.228
+   Compiling zerocopy v0.8.31
+   Compiling autocfg v1.5.0
+   Compiling serde v1.0.228
+   Compiling either v1.15.0
+   Compiling serde_json v1.0.145
+   Compiling rayon-core v1.13.0
+   Compiling cfg-if v1.0.4
+   Compiling libc v0.2.178
+   Compiling clap_lex v0.7.6
+   Compiling memchr v2.7.6
+   Compiling anstyle v1.0.13
+   Compiling regex-syntax v0.8.8
+   Compiling itoa v1.0.15
+   Compiling ciborium-io v0.2.2
+   Compiling num-traits v0.2.19
+   Compiling ryu v1.0.20
+   Compiling plotters-backend v0.3.7
+   Compiling clap_builder v4.5.53
+   Compiling itertools v0.10.5
+   Compiling plotters-svg v0.3.7
+   Compiling same-file v1.0.6
+   Compiling cast v0.3.0
+   Compiling walkdir v2.5.0
+   Compiling anes v0.1.6
+   Compiling oorandom v11.1.5
+   Compiling once_cell v1.21.3
+   Compiling broken-app v0.1.0 (/Users/mbpro/dev/rust/task/broken-app)
+   Compiling regex-automata v0.4.13
+   Compiling criterion-plot v0.5.0
+   Compiling clap v4.5.53
+   Compiling regex v1.12.2
+   Compiling crossbeam-epoch v0.9.18
+   Compiling crossbeam-deque v0.8.6
+   Compiling rayon v1.11.0
+   Compiling syn v2.0.111
+   Compiling is-terminal v0.4.17
+   Compiling zerocopy-derive v0.8.31
+   Compiling serde_derive v1.0.228
+   Compiling plotters v0.3.7
+   Compiling half v2.7.1
+   Compiling tinytemplate v1.2.1
+   Compiling ciborium-ll v0.2.2
+   Compiling ciborium v0.2.2
+   Compiling criterion v0.5.1
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.52s
+     Running unittests src/lib.rs (target/miri/aarch64-apple-darwin/debug/deps/broken_app-e10162cf25aedf7d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running unittests src/bin/demo.rs (target/miri/aarch64-apple-darwin/debug/deps/demo-906b7318bdaac525)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/integration.rs (target/miri/aarch64-apple-darwin/debug/deps/integration-fabec562e7e72c6a)
+
+running 21 tests
+test average_positive_all_negative ... ok
+test average_positive_empty ... ok
+test average_positive_mixed ... ok
+test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
+test dedup_empty ... ok
+test dedup_no_duplicates ... ok
+test dedup_preserves_uniques ... ok
+test fib_base_cases ... ok
+test fib_large ... ok
+test fib_small_numbers ... ok
+test leak_buffer_all_zeros ... ok
+test leak_buffer_empty ... ok
+test normalize_simple ... ok
+test normalize_tab_only ... ok
+test normalize_tabs_and_multiple_spaces ... ok
+test race_increment_is_correct ... ok
+test sum_even_empty_slice ... ok
+test sum_even_large_input ... ok
+test sum_even_single_element ... ok
+test sums_even_numbers ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 21.76s
+
+   Doc-tests broken_app
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

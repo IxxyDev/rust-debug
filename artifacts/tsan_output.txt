@@ -1,0 +1,46 @@
+$ RUSTFLAGS="-Zsanitizer=thread -Cunsafe-allow-abi-mismatch=sanitizer" cargo +nightly test --tests --target aarch64-apple-darwin
+
+   Compiling broken-app v0.1.0 (/Users/mbpro/dev/rust/task/broken-app)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.58s
+     Running unittests src/lib.rs (target/aarch64-apple-darwin/debug/deps/broken_app-4d2db704b4efbc7b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/demo.rs (target/aarch64-apple-darwin/debug/deps/demo-36efbe98e5c8811b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration.rs (target/aarch64-apple-darwin/debug/deps/integration-e52f0252b5cd8917)
+
+running 21 tests
+test average_positive_all_negative ... ok
+test average_positive_empty ... ok
+test average_positive_mixed ... ok
+test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
+test dedup_empty ... ok
+test dedup_no_duplicates ... ok
+test dedup_preserves_uniques ... ok
+test fib_base_cases ... ok
+test fib_large ... ok
+test fib_small_numbers ... ok
+test leak_buffer_all_zeros ... ok
+test leak_buffer_empty ... ok
+test normalize_simple ... ok
+test normalize_tab_only ... ok
+test normalize_tabs_and_multiple_spaces ... ok
+test sum_even_empty_slice ... ok
+test sum_even_single_element ... ok
+test sums_even_numbers ... ok
+test sum_even_large_input ... ok
+test race_increment_is_correct ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+NB: TSan без -Zbuild-std не пересобирает std, поэтому добавили
+-Cunsafe-allow-abi-mismatch=sanitizer. Все тесты включая
+race_increment_is_correct с потоками прошли чисто.

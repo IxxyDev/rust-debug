@@ -1,0 +1,37 @@
+   Compiling broken-app v0.1.0 (/Users/mbpro/dev/rust/task/broken-app)
+    Finished `bench` profile [optimized] target(s) in 0.75s
+     Running benches/criterion.rs (target/release/deps/criterion-eac6ddd35f7b0914)
+Gnuplot not found, using plotters backend
+Benchmarking sum_even
+Benchmarking sum_even: Warming up for 3.0000 s
+Benchmarking sum_even: Collecting 100 samples in estimated 5.0107 s (808k iterations)
+Benchmarking sum_even: Analyzing
+sum_even                time:   [6.1923 µs 6.2068 µs 6.2202 µs]
+                        change: [-0.1629% +0.2713% +0.7615%] (p = 0.27 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low severe
+  1 (1.00%) low mild
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+
+Benchmarking fib_32
+Benchmarking fib_32: Warming up for 3.0000 s
+Benchmarking fib_32: Collecting 100 samples in estimated 5.0000 s (432M iterations)
+Benchmarking fib_32: Analyzing
+fib_32                  time:   [11.415 ns 11.513 ns 11.617 ns]
+                        change: [+0.1685% +1.1349% +2.0895%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+
+Benchmarking dedup_10k
+Benchmarking dedup_10k: Warming up for 3.0000 s
+Benchmarking dedup_10k: Collecting 100 samples in estimated 5.0584 s (86k iterations)
+Benchmarking dedup_10k: Analyzing
+dedup_10k               time:   [57.408 µs 57.490 µs 57.573 µs]
+                        change: [-0.8734% -0.5149% -0.1744%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) low severe
+  2 (2.00%) low mild
+  6 (6.00%) high mild
+

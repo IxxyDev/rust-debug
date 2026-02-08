@@ -1,0 +1,53 @@
+$ cargo test
+   Compiling broken-app v0.1.0 (/Users/mbpro/dev/rust/task/broken-app)
+warning: `broken-app` (lib) generated 3 warnings
+warning: `broken-app` (lib test) generated 3 warnings (3 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.97s
+     Running tests/integration.rs
+
+running 6 tests
+test counts_non_zero_bytes ... ok
+
+thread 'sums_even_numbers' panicked at src/lib.rs:11:29:
+unsafe precondition(s) violated: slice::get_unchecked requires that the index is within the slice
+This indicates a bug in the program. This Undefined Behavior check is optional, and cannot be relied on for safety.
+thread caused non-unwinding panic. aborting.
+
+error: test failed, to rerun pass `--test integration`
+Caused by:
+  process didn't exit successfully (signal: 6, SIGABRT: process abort signal)
+
+--- отдельный запуск каждого теста ---
+
+$ cargo test -- --test-threads=1 sums_even_numbers
+test sums_even_numbers ... ABORTED (SIGABRT, UB в get_unchecked)
+
+$ cargo test -- --test-threads=1 counts_non_zero_bytes
+test counts_non_zero_bytes ... ok
+
+$ cargo test -- --test-threads=1 normalize_simple
+test normalize_simple ... ok
+
+$ cargo test -- --test-threads=1 averages_only_positive
+test averages_only_positive ... FAILED
+
+failures:
+
+---- averages_only_positive stdout ----
+thread 'averages_only_positive' panicked at tests/integration.rs:36:5:
+assertion failed: (broken_app::average_positive(&nums) - 10.0).abs() < f64::EPSILON
+
+failures:
+    averages_only_positive
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 5 filtered out
+
+$ cargo test -- --test-threads=1 dedup_preserves_uniques
+test dedup_preserves_uniques ... ok
+
+$ cargo test -- --test-threads=1 fib_small_numbers
+test fib_small_numbers ... ok
+
+Итого: 2 из 6 падают, остальные 4 ok
+Скрытые баги (не ловятся этими тестами): утечка в leak_buffer, табы в normalize,
+data race в concurrency, use-after-free

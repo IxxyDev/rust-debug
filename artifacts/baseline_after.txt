@@ -1,0 +1,12 @@
+   Compiling broken-app v0.1.0 (/Users/mbpro/dev/rust/task/broken-app)
+    Finished `bench` profile [optimized] target(s) in 0.59s
+     Running benches/baseline.rs (target/release/deps/baseline-cd3c2adf9e9c51c2)
+sum_even: 14.291µs
+slow_fib: 83ns
+slow_dedup: 232.167µs
+sum_even: 16.459µs
+slow_fib: 83ns
+slow_dedup: 192.25µs
+sum_even: 27.708µs
+slow_fib: 42ns
+slow_dedup: 221.542µs
